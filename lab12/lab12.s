@@ -10,6 +10,7 @@
     szDate:         .asciz "Date: 4/4/2024"                             //Date
     szPrompt:       .asciz "Enter a number to compute factorial of: "   //Prompt
     szBuffer:       .skip BUFFER                                        //String buffer
+    dbi:            .quad 0
 
     chLF:   .byte 0xa   //Hex for line feed
 	.text
@@ -33,7 +34,6 @@ _start:
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
-    /*
         ldr x0,=szPrompt    //Load x0 with the address of szPrompt
         bl putstring        //Branch and link to putstring
 
@@ -43,20 +43,15 @@ _start:
 
         ldr x0,=szBuffer    //Point x0 to szBuffer
         bl ascint64         //Branch and link to ascint64
-     */
 
-    mov x0, #1
-    factLoop:
         bl factorial        //Branch and link to factorial
-        add x0, x0, #1
-        b factLoop
 
-    ldr x1,=szBuffer    //Point x1 to szBuffer
-    bl int64asc         //Branch and link to int64asc
-    ldr x0,=szBuffer    //Point x0 to szBuffer
-    bl putstring        //Branch and link to putstring
-    ldr x0,=chLF        //Load x0 with the address of chLF
-    bl putch            //Branch and link to putch
+        ldr x1,=szBuffer    //Point x1 to szBuffer
+        bl int64asc         //Branch and link to int64asc
+        ldr x0,=szBuffer    //Point x0 to szBuffer
+        bl putstring        //Branch and link to putstring
+        ldr x0,=chLF        //Load x0 with the address of chLF
+        bl putch            //Branch and link to putch
 
 	// Setup the parameters to exit the program
 	// and then call Linux to do it.
