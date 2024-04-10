@@ -48,9 +48,9 @@ String_copy:
 
 
     string_copy_return:
-    ldr x19, [sp], #16      //Pop x19
-    ldr x21, [sp], #16      //Pop x21
-    ldr x22, [sp], #16      //Pop x22
+    ldr x21, [sp], #16      //Pop x19
+    ldr x20, [sp], #16      //Pop x21
+    ldr x19, [sp], #16      //Pop x22
     ret lr                  //Return
 
 	.end
