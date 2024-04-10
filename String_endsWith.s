@@ -15,11 +15,8 @@
 String_endWith:
 
     //Need to push x19, x20, lr(x30)
-    str x19, [sp, #-16]!    //Push x19
-    str x20, [sp, #-16]!    //Push x20
-    str x21, [sp, #-16]!    //Push x21
-    str x22, [sp, #-16]!    //Push x22
-
+    stp x19, x20,[sp, #-16]!
+    stp x21, x22,[sp, #-16]!
 
     //Find string length of string
     mov x19, x0         //x19 = x0
@@ -65,10 +62,8 @@ String_endWith:
     mov x0,0x0                      //If not equal return 0
 
     string_endWith_return:
-    ldr x19, [sp], #16              //Pop x19
-    ldr x20, [sp], #16              //Pop x20
-    ldr x21, [sp], #16              //Pop x21
-    ldr x22, [sp], #16              //Pop x22
+    ldp x21, x22, [sp], #16
+    ldp x19, x20, [sp], #16
     ret lr                      //Return
 
 	.end
