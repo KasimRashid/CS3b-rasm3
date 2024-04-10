@@ -36,9 +36,9 @@ String_charAt:
     b string_charAt_return  //Branch to the return
 
     string_charAt_return:
-    ldr x19, [sp], #16  //Pop x19
-    ldr x20, [sp], #16  //Pop x20
     ldr x21, [sp], #16  //Pop x21
+    ldr x20, [sp], #16  //Pop x19
+    ldr x19, [sp], #16  //Pop x20
 
     ret lr              //Return
 	.end
