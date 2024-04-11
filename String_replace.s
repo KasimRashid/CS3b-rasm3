@@ -26,7 +26,8 @@ String_replace:
     mov x30, x21    //Re point the lr
     mov x1, x19     //Move x19 back into x1
     mov x2, x20     //Move x20 back into x2
-
+    ldrb w1,[x1]
+    ldrb w2,[x2]
     mov x4, 0x0     //Initialize x4 to 0
 
     string_replace_loop:
