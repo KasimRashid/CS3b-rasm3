@@ -9,8 +9,8 @@
     szLab:          .asciz "Lab: Rasm 3"            //Lab number
     szDate:         .asciz "Date: 3/11/2024"        //Date
     szPrompt:       .asciz "Enter a string: "       //Prompt 
-    szFalse:        .asciz "FALSE"
-    szTrue:         .asciz "TRUE"
+    szFalse:        .asciz "FALSE"					//False
+    szTrue:         .asciz "TRUE"					//True
     szS1eq:         .asciz "s1 = "
     szS2eq:         .asciz "s2 = "
     szS3eq:         .asciz "s3 = "
