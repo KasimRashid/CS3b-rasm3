@@ -335,69 +335,69 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 11
-    ldr x0,=szStartsWith2
-    bl putstring
-    ldr x0,=szS1
-    ldr x1,=szCat
-    bl String_startsWith_2
-    mov x1, x0
-    cmp x1,0x0
-    b.eq main_stwi1_0_2
-    ldr x0,=szTrue
-    bl putstring
-    b main_stwi1_next_2
-    main_stwi1_0_2:
-    ldr x0,=szFalse
-    bl putstring
-    main_stwi1_next_2:
+    ldr x0,=szStartsWith2 // x0 -> zsStartsWith2
+    bl putstring	  // branch/link putstring
+    ldr x0,=szS1	  // x0 -> zsS1
+    ldr x1,=szCat	  //x1 -> szCat
+    bl String_startsWith_2	// branch/link String_startWith_2
+    mov x1, x0		 // move x1-+ 0
+    cmp x1,0x0		comapre x1 and 0
+    b.eq main_stwi1_0_2	// branch of = .to main_stwi1_0_2 
+    ldr x0,=szTrue	// x0 -> true
+    bl putstring	// branch/link to putstring
+    b main_stwi1_next_2 // branch .to main_stwi1_next_2 
+    main_stwi1_0_2:	// main_stwi1_0_2
+    ldr x0,=szFalse	// x0 -> szFalse
+    bl putstring	// branch/link putstring
+    main_stwi1_next_2:	// main_stwi1_next_2
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 12
-    ldr x0,=szEndswith
-    bl putstring
-    ldr x0,=szS1
-    ldr x1,=szinHat
-    bl String_endsWith
-    mov x1, x0
-    cmp x1,0x0
-    b.eq main_ewi1_0
-    ldr x0,=szTrue
-    bl putstring
-    b main_ewi1_next
-    main_ewi1_0:
-    ldr x0,=szFalse
-    bl putstring
-    main_ewi1_next:
+    ldr x0,=szEndswith	// x0 -> szEndswith
+    bl putstring	// branch/link to putstring
+    ldr x0,=szS1	// x0 -> szS1
+    ldr x1,=szinHat	// x1 -> szinHat
+    bl String_endsWith	// branch/link String_endsWith
+    mov x1, x0		// move x1 -> x0
+    cmp x1,0x0		// compare x1 and 0
+    b.eq main_ewi1_0	// branch of = .to main_ewi1_0
+    ldr x0,=szTrue	// x0 -> sztrue
+    bl putstring	// branch/link putstring
+    b main_ewi1_next	// branch main_ewi1_next
+    main_ewi1_0:	// main_ewi1_0
+    ldr x0,=szFalse	// x0 -> zsFalse
+    bl putstring	// branch/link putstring
+    main_ewi1_next:	// main_ewi1_next
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 13
-    ldr x0,=szindexof1
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=chg
-    bl String_indexOf_1
-    ldr x1,=szBuffer
-    bl int64asc
-    ldr x0,=szBuffer
-    bl putstring
+    ldr x0,=szindexof1	// x0 -> szindexof1
+    bl putstring	// branch/link putstring 
+    ldr x0,=szS2	// x0 -> szS2
+    ldr x1,=chg		// x1 -> chg
+    bl String_indexOf_1	// branch/link String_indexOf_1
+    ldr x1,=szBuffer	// x1 => szBuffer
+    bl int64asc		// branch/link int64asc
+    ldr x0,=szBuffer	// x0 -> szBuffer
+    bl putstring	// branch/link putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 14
-    ldr x0,=szindexof2
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=chg
-    mov x2,#9
-    bl String_indexOf_2
+    ldr x0,=szindexof2	// x0 -> szindesof2
+    bl putstring	// branch/link putstring
+    ldr x0,=szS2	// x0 -> szS2
+    ldr x1,=chg		// x1 -> chg
+    mov x2,#9		// x2-> 9
+    bl String_indexOf_2	// branhc/link string_index_of
     ldr x1,=szBuffer
     bl int64asc
     ldr x0,=szBuffer
