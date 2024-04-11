@@ -377,27 +377,27 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 13
-    ldr x0,=szindexof1
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=chg
-    bl String_indexOf_1
-    ldr x1,=szBuffer
-    bl int64asc
-    ldr x0,=szBuffer
-    bl putstring
+    ldr x0,=szindexof1	// x0 -> szindexof1
+    bl putstring	// branch/link putstring 
+    ldr x0,=szS2	// x0 -> szS2
+    ldr x1,=chg		// x1 -> chg
+    bl String_indexOf_1	// branch/link String_indexOf_1
+    ldr x1,=szBuffer	// x1 => szBuffer
+    bl int64asc		// branch/link int64asc
+    ldr x0,=szBuffer	// x0 -> szBuffer
+    bl putstring	// branch/link putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 14
-    ldr x0,=szindexof2
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=chg
-    mov x2,#9
-    bl String_indexOf_2
+    ldr x0,=szindexof2	// x0 -> szindesof2
+    bl putstring	// branch/link putstring
+    ldr x0,=szS2	// x0 -> szS2
+    ldr x1,=chg		// x1 -> chg
+    mov x2,#9		// x2-> 9
+    bl String_indexOf_2	// branhc/link string_index_of
     ldr x1,=szBuffer
     bl int64asc
     ldr x0,=szBuffer
