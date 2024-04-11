@@ -398,94 +398,94 @@ _start:
     ldr x1,=chg		// x1 -> chg
     mov x2,#9		// x2-> 9
     bl String_indexOf_2	// branhc/link string_index_of
-    ldr x1,=szBuffer
-    bl int64asc
-    ldr x0,=szBuffer
-    bl putstring
+    ldr x1,=szBuffer	// x1 -> szBuffer 
+    bl int64asc		// branch/link int64asc 
+    ldr x0,=szBuffer	// x0 -> szBuffer
+    bl putstring	// branch/link putchstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 15
-    ldr x0,=szindexof3
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=szegg
-    bl String_indexOf_3
-    ldr x1,=szBuffer
-    bl int64asc
-    ldr x0,=szBuffer
-    bl putstring
+    ldr x0,=szindexof3	// x0 -> szindexof3
+    bl putstring	// branch/link putstring
+    ldr x0,=szS2	// x0 -> szS2
+    ldr x1,=szegg	// x1 -> szegg
+    bl String_indexOf_3	// branch/link String_indexOf_3
+    ldr x1,=szBuffer	// x1 -> szBuffer
+    bl int64asc		// branch/link int64asc
+    ldr x0,=szBuffer	// X0 -> SZBuffer
+    bl putstring	// branck/link putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 16
-    ldr x0,=szlastindexof1
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=chg
-    bl String_lastIndexOf_1
-    ldr x1,=szBuffer
-    bl int64asc
-    ldr x0,=szBuffer
-    bl putstring
+    ldr x0,=szlastindexof1	// x0 -> szlastindexof1
+    bl putstring		// branch/link putstring
+    ldr x0,=szS2		// x0 -> szS2
+    ldr x1,=chg			// x1 -> vchg
+    bl String_lastIndexOf_1	// branch/link String_lastindexof_1
+    ldr x1,=szBuffer		// x1 ->szBuffer
+    bl int64asc			// branch/link int64asc
+    ldr x0,=szBuffer		// x0 -> szBuffer
+    bl putstring		// blranch/link putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 17
-    ldr x0,=szlastindexof2
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=chg
-    mov x2, #6
-    bl String_lastIndexOf_2
-    ldr x1,=szBuffer
-    bl int64asc
-    ldr x0,=szBuffer
-    bl putstring
+    ldr x0,=szlastindexof2	x0 ->to string
+    bl putstring		branch -> putstring
+    ldr x0,=szS2		// x0 szS2
+    ldr x1,=chg			// x1 -> vhg
+    mov x2, #6			// x2 -> 6
+    bl String_lastIndexOf_2	// branch to fuction 
+    ldr x1,=szBuffer		// x1 -> szBuffer
+    bl int64asc			// branch top int64asc
+    ldr x0,=szBuffer		// x0 -> sZbubber
+    bl putstring		// branhc to puchsting
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 18
-    ldr x0,=szlastindexof3
-    bl putstring
-    ldr x0,=szS2
-    ldr x1,=szegg
-    bl String_lastIndexOf_3
-    ldr x1,=szBuffer
-    bl int64asc
-    ldr x0,=szBuffer
-    bl putstring
+    ldr x0,=szlastindexof3	// x0 szlastindexof3
+    bl putstring		// branch pustring
+    ldr x0,=szS2		// x0 szS2
+    ldr x1,=szegg		// x1 => sz3gg
+    bl String_lastIndexOf_3	// branhc tpo function 
+    ldr x1,=szBuffer		// x1 -> buffer
+    bl int64asc			// BRANCH TO china
+    ldr x0,=szBuffer		// X0 szBuffer
+    bl putstring		// branch to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 19
-    ldr x0,=szreplace
-    bl putstring
-    ldr x0,=szS1
-    ldr x1,=cha
-    ldr x2,=cho
-    bl String_replace
-    ldr x1,=dbPtr
-    str x0,[x1]
-    bl putstring
+    ldr x0,=szreplace	// x0 -> string
+    bl putstring	// branch to putstring
+    ldr x0,=szS1	// x0 -> szS1
+    ldr x1,=cha		// x1 -> cha
+    ldr x2,=cho		// x2 cho
+    bl String_replace	// branch to functiopn 
+    ldr x1,=dbPtr	// x1 ->dbPtr
+    str x0,[x1]		// store x0 -> x1
+    bl putstring	// branch putstrinbg
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
-    ldr x0,[x0]
-    bl free
-    ldr x1,=dbPtr
-    mov x0,0x0
-    str x0,[x1]
+    ldr x0,=dbPtr	// im in your eyes
+    ldr x0,[x0]		// x0 -> x0 
+    bl free		// branch to free
+    ldr x1,=dbPtr	// x1-> dbPtr
+    mov x0,0x0		// move x0 with 0
+    str x0,[x1]		// store x0 with x1
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
