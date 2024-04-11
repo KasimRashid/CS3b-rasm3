@@ -469,23 +469,23 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 19
-    ldr x0,=szreplace
-    bl putstring
-    ldr x0,=szS1
-    ldr x1,=cha
-    ldr x2,=cho
-    bl String_replace
-    ldr x1,=dbPtr
-    str x0,[x1]
-    bl putstring
+    ldr x0,=szreplace	// x0 -> string
+    bl putstring	// branch to putstring
+    ldr x0,=szS1	// x0 -> szS1
+    ldr x1,=cha		// x1 -> cha
+    ldr x2,=cho		// x2 cho
+    bl String_replace	// branch to functiopn 
+    ldr x1,=dbPtr	// x1 ->dbPtr
+    str x0,[x1]		// store x0 -> x1
+    bl putstring	// branch putstrinbg
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
-    ldr x0,[x0]
-    bl free
-    ldr x1,=dbPtr
-    mov x0,0x0
-    str x0,[x1]
+    ldr x0,=dbPtr	// im in your eyes
+    ldr x0,[x0]		// x0 -> x0 
+    bl free		// branch to free
+    ldr x1,=dbPtr	// x1-> dbPtr
+    mov x0,0x0		// move x0 with 0
+    str x0,[x1]		// store x0 with x1
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
