@@ -490,73 +490,73 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 20
-    ldr x0,=sztolower
-    bl putstring
-    ldr x0,=szrp
-    bl String_toLowerCase
-    ldr x1,=dbPtr
-    str x0,[x1]
-    bl putstring
+    ldr x0,=sztolower	//Point x0 to a variable
+    bl putstring		//Branch
+    ldr x0,=szrp		//Point x0 to a variable
+    bl String_toLowerCase	//Branch
+    ldr x1,=dbPtr		//Point x0 to a variable
+    str x0,[x1]			//Store a value in a register
+    bl putstring		//Branch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
-    ldr x0,[x0]
-    bl free
-    ldr x1,=dbPtr
+    ldr x0,=dbPtr		//Point x0 to a variable
+    ldr x0,[x0]			//Store a value in a register
+    bl free				//Branch
+    ldr x1,=dbPtr		//Point x0 to a variable
     mov x0,0x0
-    str x0,[x1]
+    str x0,[x1]			//Store a value in a register
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 21
-    ldr x0,=sztoupper
-    bl putstring
-    ldr x0,=szrp
-    bl String_toUpperCase
-    ldr x1,=dbPtr
-    str x0,[x1]
-    bl putstring
+    ldr x0,=sztoupper	//Point x0 to a variable
+    bl putstring		//Branch
+    ldr x0,=szrp		//Point x0 to a variable
+    bl String_toUpperCase	//Branch
+    ldr x1,=dbPtr		//Point x0 to a variable
+    str x0,[x1]			//Store a value in a register
+    bl putstring		//Branch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
-    ldr x0,[x0]
-    bl free
-    ldr x1,=dbPtr
-    mov x0,0x0
-    str x0,[x1]
+    ldr x0,=dbPtr		//Point x0 to a variable
+    ldr x0,[x0]			//Store a value in a register
+    bl free				//Branch
+    ldr x1,=dbPtr		//Point x0 to a variable
+    mov x0,0x0			//Move a value into a register
+    str x0,[x1]			//Store a value in a register
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test22
-    ldr x0,=szConcat
-    bl putstring
-    ldr x0,=szrp
-    ldr x1,=szSpace
-    bl String_concat
-    ldr x1,=dbPtr
-    str x0,[x1]
+    ldr x0,=szConcat	//Point x0 to a variable
+    bl putstring		//Branch
+    ldr x0,=szrp		//Point x0 to a variable
+    ldr x1,=szSpace		//Point x0 to a variable
+    bl String_concat	//Branch
+    ldr x1,=dbPtr		//Point x0 to a variable
+    str x0,[x1]			//Store a value in a register
 
-    ldr x0,=dbPtr
-    ldr x0,[x0]
-    ldr x1,=szS2
-    bl String_concat
-    ldr x1,=dbPtr2
-    str x0,[x1]
-    bl putstring
+    ldr x0,=dbPtr		//Point x0 to a variable
+    ldr x0,[x0]			//Store a value in a register
+    ldr x1,=szS2		//Point x0 to a variable
+    bl String_concat	//Branch
+    ldr x1,=dbPtr2		//Point x0 to a variable
+    str x0,[x1]			//Store a value in a register
+    bl putstring		//Branch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
-    ldr x0,[x0]
-    bl free
-    ldr x1,=dbPtr
-    mov x0,0x0
-    str x0,[x1]
-    ldr x0,=dbPtr2
-    ldr x0,[x0]
-    bl free
-    ldr x1,=dbPtr2
-    mov x0,0x0
-    str x0,[x1]
+    ldr x0,=dbPtr		//Point x0 to a variable
+    ldr x0,[x0]			//Store a value in a register
+    bl free				//Branch
+    ldr x1,=dbPtr		//Point x0 to a variable
+    mov x0,0x0			//Move a value into a register
+    str x0,[x1]			//Store a value in a register
+    ldr x0,=dbPtr2		//Point x0 to a variable
+    ldr x0,[x0]			//Store a value in a register
+    bl free				//Branch
+    ldr x1,=dbPtr2		//Point x0 to a variable
+    mov x0,0x0			//Move a value into a register
+    str x0,[x1]			//Store a value in a register
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
