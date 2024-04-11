@@ -299,13 +299,13 @@ _start:
 
     //Test 9
     ldr x0,=szCharAt	// load x0 with zsChartAt
-    bl putstring
-    ldr x0,=szS2
-    mov x1, #4
-    bl String_charAt
-    ldr x1,=chBuff
-    strb w0,[x1]
-    ldr x0,=chBuff
+    bl putstring	// branch/link putstring
+    ldr x0,=szS2	// load x0 with szS2
+    mov x1, #4		// move 4 -> x1
+    bl String_charAt	// branch/link String_charAt
+    ldr x1,=chBuff	// load x1 ->chBuff
+    strb w0,[x1]	//store w0 with value of x1
+    ldr x0,=chBuff	// load xo with chBuff
     bl putch
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
@@ -313,22 +313,22 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 10
-    ldr x0,=szStartsWith
-    bl putstring
-    ldr x0,=szS1
-    ldr x1,=szhat
-    mov x2,#11
-    bl String_startsWith_1
-    mov x1, x0
-    cmp x1,0x0
-    b.eq main_stwi1_0
-    ldr x0,=szTrue
-    bl putstring
-    b main_stwi1_next
-    main_stwi1_0:
-    ldr x0,=szFalse
-    bl putstring
-    main_stwi1_next:
+    ldr x0,=szStartsWith // load x0 with szStartWith
+    bl putstring	 // branch/link putstring
+    ldr x0,=szS1	 // load x0 with szS1
+    ldr x1,=szhat	 // load x1 with szHat
+    mov x2,#11		 // move 11 -> x2
+    bl String_startsWith_1	// branch/link String_startWith_1
+    mov x1, x0		// move x1 with x0 
+    cmp x1,0x0		// compare x1 with 0
+    b.eq main_stwi1_0	// b.eq main_stwi1_0
+    ldr x0,=szTrue	// load x0 with zsTrue
+    bl putstring	// branch/link putstring
+    b main_stwi1_next	// branch main_stwi1_next
+    main_stwi1_0:	// main_stwi1_0
+    ldr x0,=szFalse	// load x0 with szFalse
+    bl putstring	// branch/link putstring
+    main_stwi1_next:	// main_stwi1_next
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
     ldr x0,=chLF        //Load x0 with the address of chLF
