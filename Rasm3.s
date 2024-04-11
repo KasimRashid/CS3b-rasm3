@@ -298,7 +298,7 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 9
-    ldr x0,=szCharAt
+    ldr x0,=szCharAt	// load x0 with zsChartAt
     bl putstring
     ldr x0,=szS2
     mov x1, #4
