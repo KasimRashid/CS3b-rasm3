@@ -51,8 +51,8 @@ String_toLowerCase:
         b string_toLowerCase_incriment      //Else branch to the incriment
 
         string_toLowerCase_isLessThan:
-        cmp w1, 0x20                        //If the char is a space ignore
-        b.eq string_toLowerCase_incriment   //Branch if equal to the incriment
+        cmp w1, 0x41
+        b.lt string_toLowerCase_incriment
         add w1, w1, 0x20                    //Add 20 in hex to convert to the lower case
         strb w1,[x0, x3]                    //Store the lowercase char into x0
 
