@@ -85,72 +85,72 @@ _start:
 
     ldr x0,=szPrompt    //Load x0 with the prompt
     bl putstring		//Branch and link to putstring
-    ldr x0,=szS1
-    mov x1, BUFFER
-    bl getstring
+    ldr x0,=szS1		//Point x0 to szS1
+    mov x1, BUFFER		//Move max size into x1
+    bl getstring		//Branch and link to getstring
 
-    ldr x0,=szPrompt
+    ldr x0,=szPrompt	//Load x0 with the prompt
     bl putstring		//Branch and link to putstring
-    ldr x0,=szS2
-    mov x1, BUFFER
-    bl getstring
+    ldr x0,=szS2		//Point x0 to szS2
+    mov x1, BUFFER		//Move max size into x1
+    bl getstring		//Branch and link to getstring
 
-    ldr x0,=szPrompt
+    ldr x0,=szPrompt	//Load x0 with the prompt
     bl putstring		//Branch and link to putstring
-    ldr x0,=szS3
-    mov x1, BUFFER
-    bl getstring
+    ldr x0,=szS3		//Point x0 to szS3
+    mov x1, BUFFER		//Move max size into x1
+    bl getstring		//Branch and link to getstring
 
     //Test1
-    ldr x0,=szS1
-    bl String_length
-    ldr x1, =szBuffer
-    bl int64asc
-    ldr x0,=szLen1
+    ldr x0,=szS1		//Point x0 to szS1
+    bl String_length	//Branch and link to string length
+    ldr x1, =szBuffer	//Point x1 to szBuffer
+    bl int64asc			//Branch and linkto in64asc
+    ldr x0,=szLen1		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szBuffer
+    ldr x0,=szBuffer	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     ldr x0,=szS2
-    bl String_length
-    ldr x1, =szBuffer
-    bl int64asc
-    ldr x0,=szLen2
+    bl String_length	//Branch and link to string length
+    ldr x1, =szBuffer	//Point x1 to szBuffer
+    bl int64asc			//Branch and linkto in64asc
+    ldr x0,=szLen2		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szBuffer
+    ldr x0,=szBuffer	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
-    ldr x0,=szS3
-    bl String_length
-    ldr x1, =szBuffer
-    bl int64asc
-    ldr x0,=szLen3
+    ldr x0,=szS3		//Point x0 to a variable
+    bl String_length	//Branch and link to string length
+    ldr x1, =szBuffer	//Point x1 to szBuffer
+    bl int64asc			//Branch and linkto in64asc
+    ldr x0,=szLen3		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szBuffer
+    ldr x0,=szBuffer	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 2
-    ldr x0,=szS1
-    ldr x1,=szS3
+    ldr x0,=szS1		//Point x0 to szS1
+    ldr x1,=szS3		//Point x0 to a variable
     bl String_equals
     mov x1, x0
     cmp x1,0x0
     b.eq main_eq_0
-    ldr x0,=szEquals
+    ldr x0,=szEquals	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szTrue
+    ldr x0,=szTrue		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     b main_eq_next
     main_eq_0:
-    ldr x0,=szEquals
-    bl putstring		//Branch and link to putstring
-    ldr x0,=szFalse
+    ldr x0,=szEquals	//Point x0 to a variable
+    bl putstring		//B	ranch and link to putstring
+    ldr x0,=szFalse		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     main_eq_next:
     ldr x0,=chLF        //Load x0 with the address of chLF
@@ -159,21 +159,21 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 3
-    ldr x0,=szS1
-    ldr x1,=szS1
+    ldr x0,=szS1		//Point x0 to szS1
+    ldr x1,=szS1		//Point x0 to a variable
     bl String_equals
     mov x1, x0
     cmp x1,0x0
     b.eq main_eq_0_2
-    ldr x0,=szEquals2
+    ldr x0,=szEquals2	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szTrue
+    ldr x0,=szTrue		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     b main_eq_next_2
     main_eq_0_2:
-    ldr x0,=szEquals2
+    ldr x0,=szEquals2	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szFalse
+    ldr x0,=szFalse		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     main_eq_next_2:
     ldr x0,=chLF        //Load x0 with the address of chLF
@@ -182,21 +182,21 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 4
-    ldr x0,=szS1
-    ldr x1,=szS3
+    ldr x0,=szS1		//Point x0 to szS1
+    ldr x1,=szS3		//Point x0 to a variable
     bl String_equalsIgnoreCase
     mov x1, x0
     cmp x1,0x0
     b.eq main_eqig_0
     ldr x0,=szEqIgnore
     bl putstring		//Branch and link to putstring
-    ldr x0,=szTrue
+    ldr x0,=szTrue		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     b main_eqig_next
     main_eqig_0:
-    ldr x0,=szEqIgnore
+    ldr x0,=szEqIgnore	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szFalse
+    ldr x0,=szFalse		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     main_eqig_next:
     ldr x0,=chLF        //Load x0 with the address of chLF
@@ -205,21 +205,21 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 5
-    ldr x0,=szS1
-    ldr x1,=szS2
+    ldr x0,=szS1		//Point x0 to szS1
+    ldr x1,=szS2		//Point x0 to a variable
     bl String_equalsIgnoreCase
     mov x1, x0
     cmp x1,0x0
     b.eq main_eqig_0_2
-    ldr x0,=szEqIgnore2
+    ldr x0,=szEqIgnore2	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szTrue
+    ldr x0,=szTrue		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     b main_eqig_next_2
     main_eqig_0_2:
-    ldr x0,=szEqIgnore2
+    ldr x0,=szEqIgnore2	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szFalse
+    ldr x0,=szFalse		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     main_eqig_next_2:
     ldr x0,=chLF        //Load x0 with the address of chLF
@@ -228,70 +228,70 @@ _start:
     bl putch            //Branch and link to putch
 
     //Test 6
-    ldr x0,=szCpy
+    ldr x0,=szCpy		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=szS1eq
+    ldr x0,=szS1eq		//Point x0 to szS1
     bl putstring		//Branch and link to putstring
-    ldr x0,=szS1
+    ldr x0,=szS1		//Point x0 to szS1
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=szS4eq
+    ldr x0,=szS4eq		//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szS1
+    ldr x0,=szS1		//Point x0 to szS1
     bl String_copy
-    ldr x1,=dbPtr
+    ldr x1,=dbPtr		//Point x0 to a variable
     str x0,[x1]
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
+    ldr x0,=dbPtr		//Point x0 to a variable
     ldr x0,[x0]
     bl free
-    ldr x1,=dbPtr
+    ldr x1,=dbPtr		//Point x0 to a variable
     mov x0,0x0
     str x0,[x1]
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 7
-    ldr x0,=szSubStr1
+    ldr x0,=szSubStr1	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szS3
+    ldr x0,=szS3		//Point x0 to a variable
     mov x1, #4
     mov x2, #14
     bl String_substring_1
-    ldr x1,=dbPtr
+    ldr x1,=dbPtr		//Point x0 to a variable
     str x0,[x1]
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
+    ldr x0,=dbPtr		//Point x0 to a variable
     ldr x0,[x0]
     bl free
-    ldr x1,=dbPtr
+    ldr x1,=dbPtr		//Point x0 to a variable
     mov x0,0x0
     str x0,[x1]
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
 
     //Test 8
-    ldr x0,=szSubStr2
+    ldr x0,=szSubStr2	//Point x0 to a variable
     bl putstring		//Branch and link to putstring
-    ldr x0,=szS3
+    ldr x0,=szS3		//Point x0 to a variable
     mov x1, #7
     bl String_substring_2
-    ldr x1,=dbPtr
+    ldr x1,=dbPtr		//Point x0 to a variable
     str x0,[x1]
     bl putstring		//Branch and link to putstring
     ldr x0,=chLF        //Load x0 with the address of chLF
     bl putch            //Branch and link to putch
-    ldr x0,=dbPtr
+    ldr x0,=dbPtr		//Point x0 to a variable
     ldr x0,[x0]
     bl free
-    ldr x1,=dbPtr
+    ldr x1,=dbPtr		//Point x0 to a variable
     mov x0,0x0
     str x0,[x1]
     ldr x0,=chLF        //Load x0 with the address of chLF
