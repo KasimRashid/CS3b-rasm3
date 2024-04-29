@@ -16,7 +16,7 @@
 String_concat:
     stp x19, x20, [sp, #-16]!   //Push x19, x20
     stp x21, x22, [sp, #-16]!   //Push x21, x22
-    str x23, [sp, #-16]         //Push x23
+    str x23, [sp, #-16]!         //Push x23
 
     mov x19, x0         //Preserve x0
     mov x20, x1         //Preserve x1
